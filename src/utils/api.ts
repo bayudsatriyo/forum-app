@@ -3,7 +3,7 @@ import { RegisterUser } from "../states/users/action";
 
 interface optionsType {
     headers?: {
-        Authorizaion?: string,
+        Authorization?: string,
         'Content-Type'?: string,
 
     },
@@ -15,6 +15,7 @@ const api = (() => {
     const BASE_URL = "https://forum-api.dicoding.dev/v1";
 
     function getAccessToken() {
+        console.log(localStorage.getItem("twitAccessToken"))
         return localStorage.getItem("twitAccessToken");
     }
 
@@ -23,7 +24,7 @@ const api = (() => {
             ...options,
             headers: {
                 ...options?.headers,
-                Authorizaion: `Bearer ${getAccessToken()}`,
+                Authorization: `Bearer ${getAccessToken()}`,
             },
         });
     }

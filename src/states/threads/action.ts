@@ -22,8 +22,8 @@ export interface threadType {
     category: string,
     createdAt: string,
     ownerId: string,
-    upVoteBy: Array<string>,
-    downVoteBy: Array<string>,
+    upVotesBy: Array<string>,
+    downVotesBy: Array<string>,
     totalComments: number
 }
 
@@ -72,7 +72,8 @@ function asyncAddThread({ title, body, category }: { title: string, body: string
 function asyncToggleVoteThread({ threadId, votename }: { threadId: string, votename: string | null }) {
     return async (dispatch: AppDispatch, getState: () => RootState) => {
         const { authUser } = getState();
-
+        console.log(threadId)
+        console.log(votename)
         if (authUser === null || authUser === undefined) {
             return (alert('Silahkan Login terlebih dahulu'))
         } else {
@@ -91,8 +92,9 @@ function asyncToggleVoteThread({ threadId, votename }: { threadId: string, voten
             }
         } catch (error) {
             if (error instanceof Error) {
-                await api.neutralizeVote(threadId)
+                alert(error.message)
                 dispatch(toggleVoteThreadActionCreator({ threadId, votename: 'neutral-vote', userId }))
+
             }
         }
     }
