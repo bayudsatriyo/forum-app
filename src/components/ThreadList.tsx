@@ -1,12 +1,23 @@
 import { authUserType } from "../states/authUser/action";
-import { threadType } from "../states/threads/action";
+
 import ThreadItem from "./ThreadItem";
 
+export interface threadItemType {
+    id: string,
+    title: string,
+    body: string,
+    category: string,
+    createdAt: string,
+    ownerId: string,
+    upVotesBy: Array<string>,
+    downVotesBy: Array<string>,
+    totalComments: number,
+    user: authUserType
+}
 
-function ThreadList({ threads, authUser, onVote }: { threads: Array<threadType>, authUser: authUserType | null | undefined, onVote: (threadId: string, votename: string | null) => void }) {
 
+function ThreadList({ threads, authUser, onVote }: { threads: Array<threadItemType>, authUser: authUserType | null, onVote: (threadId: string, votename: string | null) => void }) {
 
-    console.log(threads)
     return (
         <div className="thread-list flex flex-col gap-10">
             {threads.map((threadItem) => (

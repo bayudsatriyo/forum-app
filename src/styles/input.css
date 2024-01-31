@@ -11,8 +11,8 @@
       .hamburger-active > span {
         @apply rotate-0;
       }
-
+/* 
     body {
         background: linear-gradient(128deg, rgba(148,165,251,1) 0%, rgba(245,210,255,1) 11%, rgba(255,255,255,1) 42%, rgba(245,210,255,1) 56%, rgba(208,216,255,1) 70%, rgba(255,255,255,1) 95%, rgba(250,250,250,1) 100%);
-    }
+    } */
 }

@@ -16,7 +16,7 @@ function LoginPage() {
     }
 
     return (
-        <section>
+        <section className="mt-24">
             <header>
                 <h1>Hallo Semua</h1>
             </header>

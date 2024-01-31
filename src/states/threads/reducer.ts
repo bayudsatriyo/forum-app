@@ -12,8 +12,6 @@ function threadsReducer(threads: Array<threadType> = [], action: Action = { type
         case ActionType.ADD_THREAD:
             return [action.payload?.thread, ...threads];
         case ActionType.TOGGLE_VOTE:
-            console.log('ini thread reduce')
-            console.log(threads)
             return threads.map((thread: threadType) => {
                 if (thread.id === action.payload?.threadId) {
                     if (action.payload.votename === 'up-vote') {

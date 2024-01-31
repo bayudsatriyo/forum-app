@@ -256,7 +256,7 @@ const api = (() => {
     }
 
     async function seeLeaderboards() {
-        const response = await _fetchWithAuth(`${BASE_URL}/threads/leaderboards`)
+        const response = await _fetchWithAuth(`${BASE_URL}/leaderboards`)
 
         const responseJson = await response.json();
 

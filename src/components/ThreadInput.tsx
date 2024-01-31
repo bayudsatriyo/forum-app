@@ -43,14 +43,14 @@ function ThreadInput({ addThread, authUser }: addThreadType) {
         <>
             <div className="thread-input flex flex-col gap-2 mb-8">
                 <div className="input flex-col flex gap-2">
-                    <input type="text" name="title" placeholder="Judul pikiran anda ..." onChange={onChangeTitle} value={title} className="border border-blue-500 rounded-lg py-1" />
-                    <textarea name="body" placeholder="Apa isi fikiran anda ? kosong ? hmm...." onChange={onChangeBody} value={body} className="border border-blue-500 rounded-lg py-2"></textarea>
-                    <div className="flex w-full gap-8">
-                        <input type="text" name="category" placeholder="#category" onChange={onChangeCategory} value={category} className="w-full border border-blue-500 rounded-lg" />
-                        <button type="submit" onClick={addthread} className="bg-blue-500 text-slate-50 px-4 rounded-2xl ">Kirim</button>
+                    <input type="text" name="title" placeholder="Judul pikiran anda ..." onChange={onChangeTitle} value={title} className="border border-effect rounded-lg py-1 pl-2" />
+                    <textarea name="body" placeholder="Apa isi fikiran anda ? kosong ? hmm...." onChange={onChangeBody} value={body} className="border border-effect rounded-lg py-2 pl-2"></textarea>
+                    <div className="flex w-full gap-5">
+                        <input type="text" name="category" placeholder="#category" onChange={onChangeCategory} value={category} className="w-full border border-effect rounded-lg pl-2" />
+                        <button type="submit" onClick={addthread} className="bg-effect border border-effect text-slate-50 px-4 h-8 rounded-xl hover:text-effect hover:bg-white hover:border-effect hover:border ">Kirim</button>
                     </div>
                 </div>
-            </div>
+            </div >
 
         </>
     )
